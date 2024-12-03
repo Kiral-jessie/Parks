@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+/* General styling for the entire app */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #d3d3d3;
+  color: #fff;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.background {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height: 100vh;
+  background-image: url('./images/images (24).jpeg'); /* Ensure the path is correct */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
+  text-align: center;
+  z-index: -1;
+  filter: brightness(0.3);
 }
 
-.App-link {
-  color: #61dafb;
+/* Main container */
+div {
+  text-align: center;
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Heading */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color:#9c5f33;
+}
+
+/* Buttons for register and reserve */
+button {
+  background-color:#9c5f33;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Content area */
+div h3 {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #fff;
+}
+/* Media Queries for Responsiveness */
+
+/* For devices with a max-width of 768px (Tablets, small devices) */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem; /* Slightly smaller heading */
   }
-  to {
-    transform: rotate(360deg);
+
+  button {
+    padding: 8px 15px; /* Smaller button size */
+  }
+
+  .app-container {
+    margin: 15px; /* Adjusted margin */
   }
 }
+
+/* For devices with a max-width of 480px (Mobile phones) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px; /* Smaller base font size for readability */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Smaller heading for mobile */
+  }
+
+  .app-container {
+    margin: 10px; /* Reduced margin for mobile */
+  }
+
+  button {
+    padding: 8px 15px; /* Adjust button padding */
+    width: 100%; /* Make button full-width */
+    font-size: 14px; /* Adjust font size inside button */
+  }
+}
+

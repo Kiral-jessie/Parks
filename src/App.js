@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+//import myImage from './images/images (24).jpeg'; // Adjust the path if needed
+
+import UserReg from'./components/userReg';
+import ParkingReservation from'./components/parkingReservation';
 import './App.css';
+import Footer from './footer.js'
+import About from './about.js'
+import Contact from './contact.js'
+
+import Header from './header.js'; 
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const[view,setView]=useState("")
+  return(
+    <Router>
+  <div>
+    <div className="background"></div>
+      <h1>Cynthia's Smart Parking System</h1>
+     <Header setView={setView} />
+     <Routes>
+      <Route path="/contact" element={<Contact />}/>
+      <Route path="/about" element={<About />}/>
+    </Routes>
+    
+    
+    {view==='register'&& <UserReg />}
+    {view==='reserve'&& <ParkingReservation />}
+    <Footer />
     </div>
+    </Router>
   );
 }
 

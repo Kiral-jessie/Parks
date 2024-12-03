@@ -1,0 +1,80 @@
+/* Styling for the unordered list in the header */
+ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /*background-color: #9c5f33; /* Green background */
+}
+
+/* Styling for list items */
+ul li {
+  margin: 0 15px; /* Space between links */
+}
+
+/* Styling for the links */
+ul li a {
+  text-decoration: none;
+  color: white; /* White text for links */
+  font-size: 1.2rem; /* Slightly larger font */
+  font-weight: bold;
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Hover effect for links */
+ul li a:hover {
+  color: #2c3e50; /* Gold text on hover */
+}
+
+/* General header styling */
+.header h3 {
+  text-align: center;
+  margin: 15px 0;
+  color: #fff; /* Dark text */
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+/* Media Queries for Responsiveness */
+
+/* For devices with a max-width of 768px (Tablets and small devices) */
+@media (max-width: 768px) {
+  /* Reduce font size for the links */
+  ul li a {
+    font-size: 1rem;
+  }
+
+  /* Adjust space between the list items for smaller screens */
+  ul li {
+    margin: 0 10px;
+  }
+
+  /* Adjust the header font size for better readability */
+  .header h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* For devices with a max-width of 480px (Mobile phones) */
+@media (max-width: 480px) {
+  /* Stack the list items vertically on mobile */
+  ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Further reduce font size for the links */
+  ul li a {
+    font-size: 0.9rem;
+  }
+
+  /* Adjust space between list items for smaller screens */
+  ul li {
+    margin: 5px 0;
+  }
+
+  /* Further reduce the header font size for mobile */
+  .header h3 {
+    font-size: 1rem;
+  }
+}
